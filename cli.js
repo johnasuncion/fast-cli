@@ -84,6 +84,14 @@ if (process.stdout.isTTY) {
 		}
 
 		logUpdate(pre + speed());
+		
+		const fs = require('fs');
+		fs.writeFile("c:/message.txt", speed(), function(err) {
+		    if(err) {
+			return console.log(err);
+		    }
+		    console.log("The file was saved!");
+		}); 
 	}, 50);
 }
 
